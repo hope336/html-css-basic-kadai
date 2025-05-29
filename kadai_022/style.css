@@ -1,0 +1,104 @@
+h1,p,body{
+    margin: 0;
+}
+p,a{
+    font-size: 20px;
+}
+/* header のスタイル */
+header {
+    margin-bottom: 20px;              /* 下の余白 */
+    background-color: rgb(244, 79, 79); /* 背景色 */
+    text-align: center;               /* 中の要素を中央揃え */
+}
+
+/* h1 のスタイル */
+h1 {
+    color: rgb(255, 255, 255);        /* 文字色（白） */
+}
+/* main 要素のスタイル */
+main {
+    padding: 10px; /* 上下左右に余白 */
+}
+
+/* #parent のスタイル（Flexコンテナにする） */
+#parent {
+    display: flex;                        /* Flexにする */
+    justify-content: space-between;      /* 均等な間隔で配置 */
+}
+
+/* .contents のスタイル（Flexアイテム） */
+.contents {
+    border: 3px solid rgb(238, 204, 204); /* 枠線 */
+    flex-basis: 25%;                     /* 幅（親の25%） */
+    padding: 10px 15px;                  /* 内側の余白：上下10px、左右15px */
+    margin: 20px 0;                      /* 外側の余白：上下20px、左右0 */
+    text-align: center;                  /* 中の要素を中央揃え */
+}
+/* h2のスタイル */
+h2 {
+    font-size: 25px;
+    border-bottom: 3px dotted rgb(236, 122, 122); /* 点線の下線 */
+    position: relative; /* 疑似要素用に必要 */
+    padding-left: 20px; /* ●が被らないよう余白 */
+}
+
+/* h2の前に●マーク */
+h2::before {
+    content: "●";
+    color: rgb(239, 111, 139);
+    position: absolute;
+    left: 0;
+}
+
+/* .contents内の2番目のp要素の最初の1文字にスタイル */
+.contents p:nth-of-type(2)::first-letter {
+    font-weight: bold;
+    color: rgb(97, 206, 249);
+}
+
+/* .contents内のimgスタイル */
+.contents img {
+    margin: 10px 0;
+    width: 70%;
+}
+/* footer 要素のスタイル */
+footer {
+    background-color: rgb(244, 79, 79); /* 背景色 */
+    text-align: center;                /* 中身を中央揃え */
+    padding: 10px 0;                   /* 上下に少し余白つけると見やすくなるよ */
+}
+
+/* footer 内の a 要素のスタイル */
+footer a {
+    color: rgb(255, 255, 255);         /* 通常時のリンク色（白） */
+    text-decoration: none;            /* 下線を消したい場合はこれを追加してもOK */
+}
+
+/* 訪問済みリンクの文字色 */
+footer a:visited {
+    color: rgb(193, 234, 251);
+}
+
+/* マウスホバー時の文字色 */
+footer a:hover {
+    color: rgb(245, 178, 168);
+}
+@media screen and (max-width: 768px) {
+    h2 {
+      font-size: 30px;
+    }
+  
+    p {
+      font-size: 25px;
+    }
+  
+    #parent {
+      flex-direction: column; /* 横並びから縦並びに切り替え */
+      align-items: center;    /* 縦並びでも中央に寄せる */
+    }
+  
+    .contents {
+      flex-basis: 80%;        /* 横幅を大きくして見やすく */
+    }
+  }
+  
